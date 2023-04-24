@@ -343,6 +343,7 @@ def save_model(
     loss_scaler,
 ):
     output_dir = Path(args.output_dir)
+    output_dir.mkdir(exist_ok=True, parents=True)
     epoch_name = str(epoch)
     if loss_scaler is not None:
         checkpoint_paths = [
