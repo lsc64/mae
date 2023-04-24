@@ -10,6 +10,7 @@
 # --------------------------------------------------------
 
 import builtins
+from builtins import print as print_builtin
 import datetime
 import os
 import time
@@ -186,7 +187,7 @@ def setup_for_distributed(is_master):
     """
     This function disables printing when not in master process
     """
-    builtin_print = builtins.print
+    builtin_print = print_builtin
 
     def print(*args, **kwargs):
         force = kwargs.pop("force", False)
